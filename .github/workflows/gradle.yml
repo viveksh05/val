@@ -21,20 +21,20 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 1.8
-    - name: Grant execute permission for gradlew
-      run: chmod +x gradlew
-    - name: Build with Gradle
-      run: ./gradlew build
+#    - name: Grant execute permission for gradlew
+#      run: chmod +x gradlew
+#    - name: Build with Gradle
+#      run: ./gradlew build
       
-    - name: get-archive
-      uses: actions/download-artifact@v3
-      with:
-          name: VulnerableApp-1.0.0.jar
-      # run the pipeline scan action
-    - name: pipeline-scan action step
+#    - name: get-archive
+#      uses: actions/download-artifact@v3
+#      with:
+#          name: VulnerableApp-1.0.0.jar
+#      # run the pipeline scan action
+    - name: Veracode Pipeline Scan action step
       id: pipeline-scan
       uses: veracode/Veracode-pipeline-scan-action@v1.0.8
       with:
           vid: ${{ secrets.VID }}
           vkey: ${{ secrets.VKEY }}
-          file: "VulnerableApp-1.0.0.jar"
+          file: "veracode/VulnerableApp-1.11.0.jar"
