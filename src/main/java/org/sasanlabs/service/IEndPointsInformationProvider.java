@@ -22,6 +22,7 @@ public interface IEndPointsInformationProvider {
      *
      * @return
      * @throws JsonProcessingException
+     *
      */
     List<AllEndPointsResponseBean> getSupportedEndPoints() throws JsonProcessingException;
 
