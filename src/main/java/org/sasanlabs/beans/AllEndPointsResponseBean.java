@@ -14,6 +14,7 @@ import org.sasanlabs.vulnerability.types.VulnerabilityType;
 public class AllEndPointsResponseBean {
 
     @JsonProperty("Name")
+    // Name
     private String name;
 
     @JsonProperty("Description")
